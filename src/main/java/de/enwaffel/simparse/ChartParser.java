@@ -35,7 +35,7 @@ class ChartParser extends ParserBase {
         List<List<String>> measures = new ArrayList<>();
         List<String> curMeasure = new ArrayList<>();
         for (String line : lines.subList(4 + linesOffset, lines.size())) {
-            if (line.equalsIgnoreCase(",")) {
+            if (line.startsWith(",")) {
                 measures.add(curMeasure);
                 curMeasure = new ArrayList<>();
             } else {
