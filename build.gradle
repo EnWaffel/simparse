@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group = 'de.enwaffel'
+version = '1.0-SNAPSHOT'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'de.enwaffel.simparse.PlayTest'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
