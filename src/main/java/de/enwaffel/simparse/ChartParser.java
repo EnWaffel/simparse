@@ -56,7 +56,10 @@ class ChartParser extends ParserBase {
                     if (c == '0') continue;
 
                     double seconds = timing.beatToSeconds(beatPos);
-                    notes.add(new Note(seconds, i, NoteType.fromChar(row.charAt(i))));
+                    NoteType noteType = NoteType.fromChar(row.charAt(i));
+                    if (noteType == null) throw new IllegalArgumentException("Invalid note type: " + c);
+
+                    notes.add(new Note(seconds, i, noteType));
                 }
 
                 rowIndex++;
